@@ -36,6 +36,12 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .notice-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
 .notice-text{font-size:14px;line-height:1.75;color:var(--text2);}
 .notice-text strong{color:var(--g3);font-weight:700;}
+@keyframes lineGlowPulse{
+  0%,100%{box-shadow:0 0 6px rgba(6,199,85,0.5),0 0 0px rgba(6,199,85,0.25);transform:scale(1);}
+  50%{box-shadow:0 0 16px rgba(6,199,85,0.9),0 0 30px rgba(6,199,85,0.45);transform:scale(1.045);}
+}
+.btn-line-contact{display:inline-flex;align-items:center;gap:6px;background:#06C755;color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:all .15s;animation:lineGlowPulse 2.2s ease-in-out infinite;}
+.btn-line-contact:hover{background:#05a648;transform:scale(1.08);box-shadow:0 0 20px rgba(6,199,85,0.95);animation-play-state:paused;color:#fff;}
 .stats-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);}
 .stats-inner{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;}
 .stat{flex:1;min-width:120px;padding:18px 0;text-align:center;border-right:1px solid var(--border);}
@@ -232,6 +238,8 @@ body::after{width:500px;height:500px;bottom:-5%;right:-10%;background:radial-gra
     <h1 class="ev-title"><span id="hero-title">Survey Campaign</span></h1>
     <div class="ev-sub">Prizes for All Participants</div>
     <div class="meta-row">
+      <a class="btn-line-contact" href="https://playcbm.com/line-oa-sea" target="_blank">💬 Contact Support</a>
+      <span class="meta-sep">&middot;</span>
       <div class="delivered-pill"><span class="delivered-dot"></span>Delivered</div>
       <span class="meta-sep">&middot;</span>
       <div class="meta-txt">10 Jul 2026</div>
@@ -389,7 +397,7 @@ function renderTable(winners, q) {
       + '<td class="td-no">'+(i+1)+'</td>'
       + '<td class="td-name">'+w.name+'</td>'
       + '<td class="td-aid">'+w.aid+'</td>'
-      + '<td><span class="td-reward">Lucky Draw</span></td>'
+      + '<td><span class="td-reward">Participation Reward</span></td>'
       + '<td><a class="lnk" href="'+url+'" target="_blank">Redeem &#8599;</a></td>'
       + '<td><span class="st"><span class="sd"></span>Delivered</span></td>'
       + '</tr>';
